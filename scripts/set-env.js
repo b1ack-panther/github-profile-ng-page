@@ -8,12 +8,14 @@ const path = require('path');
 const githubToken = process.env.NG_APP_GITHUB_TOKEN || '';
 
 if (!githubToken) {
-  console.warn('⚠️  Warning: GITHUB_TOKEN environment variable not found. Using empty string.');
-  console.warn('   Make sure you have set GITHUB_TOKEN in Vercel environment variables.');
+  console.warn(
+    '⚠️  Warning: NG_APP_GITHUB_TOKEN environment variable not found. Using empty string.'
+  );
+  console.warn('   Make sure you have set NG_APP_GITHUB_TOKEN in Vercel environment variables.');
 }
 
 // Read the production environment file
-const envPath = path.join(__dirname, '../src/environments/environment.prod.ts');
+const envPath = path.join(__dirname, '../src/environments/environment.ts');
 
 // Create the environment file content
 const envContent = `export const environment = {

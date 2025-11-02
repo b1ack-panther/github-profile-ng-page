@@ -4,9 +4,6 @@
   "devCommand": "ng serve",
   "installCommand": "npm install",
   "framework": "angular",
-  "env": {
-    "GITHUB_TOKEN": "@github_token"
-  },
   "rewrites": [
     {
       "source": "/(.*)",
