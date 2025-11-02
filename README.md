@@ -243,12 +243,52 @@ The app uses these GitHub API endpoints:
 - Check that component styles are properly imported
 - Ensure no CSS conflicts with global styles
 
+## Vercel Deployment
+
+### Setting up Environment Variables in Vercel
+
+1. **Add Environment Variable in Vercel**:
+
+   - Go to your Vercel project settings
+   - Navigate to **Settings → Environment Variables**
+   - Add a new environment variable:
+     - **Name**: `GITHUB_TOKEN`
+     - **Value**: Your GitHub Personal Access Token
+     - **Environment**: Production, Preview, and Development (or just Production if preferred)
+
+2. **The build process will automatically**:
+
+   - Read `GITHUB_TOKEN` from Vercel's environment variables
+   - Inject it into `src/environments/environment.prod.ts` during build
+   - Use it in the Angular application
+
+3. **Deploy**:
+   ```bash
+   vercel deploy --prod
+   ```
+   Or push to your connected Git repository for automatic deployments.
+
+### How It Works
+
+The `scripts/set-env.js` script runs before the build:
+
+- Reads `GITHUB_TOKEN` from Vercel's environment variables (`process.env.GITHUB_TOKEN`)
+- Writes it to `src/environments/environment.prod.ts`
+- Angular build process uses this file for production builds
+
+**Note**: The script checks for multiple environment variable names:
+
+- `GITHUB_TOKEN` (recommended)
+- `githubToken`
+- `NG_APP_GITHUB_TOKEN`
+- `VERCEL_GITHUB_TOKEN`
+
 ## Security Best Practices
 
 1. **Never commit tokens to version control**
 
    - Add `src/environments/environment*.ts` to `.gitignore` if tokens are included
-   - Use environment variables in deployment platforms
+   - Use environment variables in deployment platforms (like Vercel)
    - Create `.env.example` files with placeholder values
 
 2. **Token Management**
@@ -258,9 +298,10 @@ The app uses these GitHub API endpoints:
    - Revoke unused tokens immediately
 
 3. **Production Deployments**
-   - Use secure environment variable management
+   - Use secure environment variable management (Vercel, etc.)
    - Never expose tokens in client-side code if possible
    - Consider using a backend proxy for API calls in production
+   - Always use environment variables instead of hardcoding tokens
 
 ## Browser Compatibility
 

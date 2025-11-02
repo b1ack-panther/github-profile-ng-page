@@ -1,0 +1,16 @@
+{
+  "buildCommand": "npm run build:vercel",
+  "outputDirectory": "dist/github-profile-app/browser",
+  "devCommand": "ng serve",
+  "installCommand": "npm install",
+  "framework": "angular",
+  "env": {
+    "GITHUB_TOKEN": "@github_token"
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
