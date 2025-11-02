@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Octokit } from '@octokit/rest';
 import { graphql } from '@octokit/graphql';
+import { environment } from '../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class GithubService {
   private octokit = new Octokit({
-    auth: '<TOKEN>',
+    auth: environment.githubToken,
   });
 
   private gql = graphql.defaults({
     headers: {
-      authorization: `Bearer <TOKEN>`,
+      authorization: `Bearer ${environment.githubToken}`,
     },
   });
 
