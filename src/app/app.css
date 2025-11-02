@@ -470,7 +470,7 @@ section {
   justify-content: space-between;
   align-items: center;
   font-size: 12px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .legend {
@@ -707,3 +707,78 @@ section {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+.activity-chart-overview-container {
+  border-top: 1px solid #30363d;
+  margin: 0px -16px;
+  margin-top: 20px;
+  padding: 16px;
+  padding-bottom: 0;
+  color: #c9d1d9;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+.header-pills {
+  margin-bottom: 30px;
+}
+
+.pill {
+  display: inline-block;
+  background-color: #21262d;
+  padding: 4px 12px;
+  margin-right: 8px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.activity-chart-content {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  gap: 20px;
+}
+
+.activity-chart-text {
+  flex: 1;
+}
+
+.activity-chart-text h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #c9d1d9;
+}
+
+.activity-chart-text p {
+  font-size: 17px;
+  color: #8b949e;
+  margin: 10px 0;
+  align-items: center;
+  gap: 3px;
+
+  span {
+    display: inline-block;
+    margin-right: 7px;
+  }
+}
+
+.activity-chart-text a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+.activity-chart-text a:hover {
+  text-decoration: underline;
+}
+
+.activity-chart {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* #activity-radar-chart {
+ } */
