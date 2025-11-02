@@ -1,0 +1,34 @@
+<!-- src/app/components/contribution-graph-component/contribution-graph.component.html -->
+<div class="year-nav-container">
+  <div class="contribution-section-container">
+    <section class="contribution-section">
+      <div class="contributions-header">
+        <h2 class="section-title">
+          {{ contributionData.totalContributions }} contributions in {{ selectedYear }}
+        </h2>
+      </div>
+      <div id="contribution-graph"></div>
+      <div class="legend-container">
+        <span>Learn how we count contributions</span>
+        <div class="legend">
+          <span>Less</span>
+          @for (col of colorLegend; track col) {
+          <div class="col-box" [style.background-color]="col"></div>
+          }
+          <span>More</span>
+        </div>
+      </div>
+
+      <!-- Activity chart -->
+      <app-activity-chart></app-activity-chart>
+    </section>
+  </div>
+
+  <div class="years-nav">
+    @for (year of years; track year) {
+    <span class="year-link" [class.active]="selectedYear === year" (click)="onYearSelected(year)">
+      {{ year }}
+    </span>
+    }
+  </div>
+</div>

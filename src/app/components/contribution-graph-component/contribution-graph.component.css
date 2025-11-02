@@ -1,0 +1,72 @@
+/* src/app/components/contribution-graph-component/contribution-graph.component.css */
+section {
+  margin: 20px 0;
+}
+
+/* Contribution Section */
+.contribution-section {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  margin-top: 10px;
+  padding: 16px;
+}
+
+#contribution-graph {
+  margin: 0 auto;
+  margin-top: 16px;
+  border-radius: 6px;
+  /* overflow: hidden; */
+  width: auto;
+  max-width: 750px;
+  flex: 1;
+}
+
+.legend-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.legend {
+  display: flex;
+  gap: 5px;
+  min-width: fit-content;
+  align-items: center;
+}
+
+.col-box {
+  width: 12px;
+  height: 12px;
+}
+
+.contribution-section-container {
+  flex: 1;
+}
+
+.year-nav-container {
+  display: flex;
+  gap: 10px;
+}
+
+.years-nav {
+  margin-left: auto;
+  max-width: min-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  span {
+    padding: 4px 10px;
+    padding-right: 20px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+  .active {
+    background-color: rgb(45, 45, 169);
+    color: #c9d1d9;
+    font-weight: 600;
+  }
+}
