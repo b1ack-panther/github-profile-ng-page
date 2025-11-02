@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { GithubService } from './github.service';
 import { achievements } from './mockData';
 import { ContributionGraphComponent } from './components/contribution-graph-component/contribution-graph.component';
+import { environment } from '../environments/environment';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, ContributionGraphComponent],
+  imports: [CommonModule, ContributionGraphComponent, FooterComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.css'],
 })
@@ -18,8 +20,11 @@ export class AppComponent implements OnInit {
   user: Awaited<ReturnType<typeof this.githubService.getAuthenticatedUser>>['data'] | null = null;
   repos: Awaited<ReturnType<typeof this.githubService.getRepos>>['data'] | null = null;
   achievements = achievements;
+  hasToken = false;
 
-  constructor(private cdr: ChangeDetectorRef, private githubService: GithubService) {}
+  constructor(private cdr: ChangeDetectorRef, private githubService: GithubService) {
+    this.hasToken = !!environment.githubToken && environment.githubToken.trim() !== '';
+  }
 
   ngOnInit() {
     this.loadUserProfile();

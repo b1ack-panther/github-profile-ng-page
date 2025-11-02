@@ -1,0 +1,20 @@
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <img
+        src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+        alt="GitHub Logo"
+        class="github-logo"
+      />
+      <span>© {{ currentYear }} GitHub, Inc.</span>
+    </div>
+
+    <ul class="footer-links">
+      <li *ngFor="let link of links">
+        <a [href]="link.url" target="_blank" rel="noopener noreferrer">
+          {{ link.name }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>

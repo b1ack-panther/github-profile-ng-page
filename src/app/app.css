@@ -446,6 +446,112 @@ section {
   margin: 20px 0;
 }
 
+/* Token Warning */
+.token-warning {
+  background-color: #1f2328;
+  border: 1px solid #f85149;
+  border-radius: 6px;
+  padding: 24px;
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+}
+
+.warning-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: #f85149;
+  margin-top: 2px;
+}
+
+.warning-content {
+  flex: 1;
+}
+
+.warning-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #f85149;
+  margin-bottom: 12px;
+}
+
+.warning-text {
+  font-size: 14px;
+  color: #c9d1d9;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.warning-steps {
+  margin: 16px 0;
+  padding-left: 24px;
+  color: #c9d1d9;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.warning-steps li {
+  margin-bottom: 8px;
+}
+
+.warning-steps a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+.warning-steps a:hover {
+  text-decoration: underline;
+}
+
+.warning-steps code {
+  background-color: #21262d;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 13px;
+  color: #c9d1d9;
+}
+
+.code-example {
+  background-color: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 16px;
+  margin: 16px 0;
+  overflow-x: auto;
+}
+
+.code-example pre {
+  margin: 0;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #c9d1d9;
+}
+
+.code-example code {
+  color: #79c0ff;
+}
+
+.warning-note {
+  font-size: 13px;
+  color: #8b949e;
+  margin-top: 16px;
+  line-height: 1.5;
+}
+
+.warning-note strong {
+  color: #c9d1d9;
+}
+
+.warning-note code {
+  background-color: #21262d;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+  color: #c9d1d9;
+}
+
 /* Empty Tab State */
 .empty-tab {
   grid-template-columns: 1fr;
